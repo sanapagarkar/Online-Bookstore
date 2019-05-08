@@ -1,0 +1,18 @@
+<center>
+<img src="{{ book.cover }}" width="300px" height="400x">
+
+<h2>{{ book.name }}</h2>
+<h3>{{ book.author }}</h3>
+<h4>{{ book.about }}</h4>
+
+<button id="getit">Rent it?</button>
+</center>
+<script type="text/javascript">
+	document.getElementById("getit").onclick=regHandler;
+
+    function regHandler(event) {
+      event=event|| window.event;
+      document.location="form.html";
+    }
+</script>
+

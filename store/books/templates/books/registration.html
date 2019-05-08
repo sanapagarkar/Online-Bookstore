@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DETAILS</title>
+</head>
+<body>
+  <center>
+  <h2>Please fill in your details</h2>
+    <form name="myForm" action="" method="post" autocomplete="on">
+      {% csrf_token %}
+        Username :
+        <input type="text" id="first_name" placeholder="First Name" /><br><br>
+
+        Email Id :
+        <input type="text" id="email" placeholder="somebody@gmail.com"><br><br>
+
+         Password :
+         <input type="password" name="password" placeholder="Minimum 8 characters long" autocomplete="off"><br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+  </center>
+</body>
+</html>
+
+
+           

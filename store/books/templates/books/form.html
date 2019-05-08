@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DETAILS</title>
+</head>
+<script type="text/javascript">
+  //var clickCounter=0;
+  function validateForm(){
+    var fname=document.getElementById("first_name");
+    var lname=document.getElementById("last_name");
+    var num=document.getElementById("phone");
+    var address=document.getElementById("address");
+    var mail=document.getElementById("email");
+    var alpha=/^[A-Za-z]+$/;
+    var mailre=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var no=/[0-9]{10}/;
+    // clickCounter++;
+
+    if (fname.value==""){
+      alert("First name can't be empty");
+      fname.focus();
+      return false;
+    }
+
+    if (alpha.test(fname.value)==false){
+      alert("First Name must be in alphabets only");
+      fname.focus();
+      return false;
+    }
+
+    if (lname.value==""){
+      alert("Last name can't be empty");
+      lname.focus();
+      return false;
+    }
+
+    if (alpha.test(lname.value)==false){
+      alert("Last Name must be in alphabets only");
+      lname.focus();
+      return false;
+    }
+
+    if (num.value==""){
+      alert("Contact number can't be empty");
+      num.focus();
+      return false;
+    }
+
+     if (no.test(num.value)==false){
+      alert("Contact number should only be numeric characters");
+      num.focus();
+      return false;
+    }
+
+    if (address.value==""){
+      alert("Address can't be empty");
+      address.focus();
+      return false;
+    }
+
+    if (mail.value==""){
+      alert("Email ID can't be empty");
+      mail.focus();
+      return false;
+    }
+
+    if (mailre.test(mail.value)==false){
+      alert("Invalid Email");
+      mail.focus();
+      return false;
+    }
+        //window.locationw.href = "rent.html";action="rent.html" method="get"
+        //document.location="books/rent.html";
+    return true;
+  }
+
+  function display()
+  { 
+      var myWindow = window.open("rent.html", "", "width=500,height=500");
+  } 
+
+</script>
+<body>
+  <center>
+  <h2>Please fill in your details</h2>
+    <form name="myForm" onsubmit="return validateForm()" autocomplete="on">
+        {% csrf_token %}
+        First Name :
+        <input type="text" id="first_name" placeholder="First Name" required><br><br>
+
+        Last Name :
+        <input type="text" id="last_name" placeholder="Last Name" required><br><br>
+
+        Phone number :
+        <input type="text" id="phone" placeholder="Phone Number" required><br><br>
+
+        Address :<br>
+        <textarea name="address" rows="5" cols="45"></textarea><br><br>
+
+        Email Id:
+        <input type="text" id="email" placeholder="somebody@abc.com" required><br><br>
+         
+      <button id="button" onclick="display()">Submit</button>
+      </form>
+  </center>
+</body>
+</html>
+
+
+           

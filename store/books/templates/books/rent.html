@@ -1,0 +1,36 @@
+<h1>RENT</h1>
+
+<button id="issue" onclick="addDays()">Issue</button>
+<script>
+	function addDays(){
+	n=3;
+    var t = new Date();
+    t.setDate(t.getDate() + n); 
+    var month = "0"+(t.getMonth()+1);
+    var date = "0"+t.getDate();
+    month = month.slice(-2);
+    date = date.slice(-2);
+    var date = date +"/"+month +"/"+t.getFullYear();
+    //{{ book.issueDate }}=date;
+    document.getElementById("issueDate").innerHTML="Issue Date : "+date;
+    n=18;
+    t = new Date();
+    t.setDate(t.getDate() + n); 
+    month = "0"+(t.getMonth()+1);
+    date = "0"+t.getDate();
+    month = month.slice(-2);
+    date = date.slice(-2);
+    date = date +"/"+month +"/"+t.getFullYear();
+    //{{ book.dueDate }}= date;
+    document.getElementById("dueDate").innerHTML="Due Date : "+date;
+}
+
+</script>
+<br><p id="issueDate"></p>
+<p id="dueDate"></p>
+<ul>
+	<li>The issue date will be marked 3 days from the day of issue.</li>
+	<li>The product can be rented for a maximum of 15 days.</li>
+	<li>The due date can be manually extended by 15 days (maximum).</li>
+	<li>While returning the book, the consumer will have to login and click on return.</li>
+</ul>

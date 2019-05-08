@@ -1,0 +1,14 @@
+<h2>{{ genre }}</h2>
+
+{% if genre.book_set.all %}
+	<ol>
+		{% for book in genre.book_set.all %}
+			<li>
+				<a href="/books/{{ genre.id }}/{{ book.id }}">{{ book.name }} - {{ book.author }}
+				</a>
+			</li>
+		{% endfor %}
+	</ol>
+{% else %}
+	No books added yet.
+{% endif %}

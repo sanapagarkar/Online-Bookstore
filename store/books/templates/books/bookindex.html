@@ -1,0 +1,13 @@
+{% if all_books %}
+
+	<ul>
+		{% for book in all_books %}
+		<li>
+			<a href = "/books/{{ book.genre.id }}/{{book.id}}/">{{ book.name }} - {{ book.author }}
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	No books added yet.
+{% endif %}
